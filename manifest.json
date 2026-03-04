@@ -1,0 +1,20 @@
+{
+  "short_name": "AetherOS",
+  "name": "AetherOS — Autonomous AI Platform",
+  "description": "Manage your AI agent workforce, projects, finances, and clients from one command center.",
+  "icons": [
+    {
+      "src": "favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ],
+  "start_url": ".",
+  "display": "standalone",
+  "theme_color": "#080810",
+  "background_color": "#080810",
+  "orientation": "landscape-primary",
+  "categories": ["business", "productivity", "utilities"],
+  "lang": "en-US"
+}

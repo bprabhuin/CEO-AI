@@ -1,0 +1,56 @@
+version: '3.9'
+
+# ─────────────────────────────────────────────────────────────
+# AetherOS — Docker Compose (Production)
+# Usage: docker-compose -f docker-compose.prod.yml up -d --build
+# ─────────────────────────────────────────────────────────────
+
+services:
+  aetheros:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      target: production
+      args:
+        - REACT_APP_ANTHROPIC_API_KEY=${REACT_APP_ANTHROPIC_API_KEY}
+        - REACT_APP_VERSION=${REACT_APP_VERSION:-4.0.0}
+    image: aetheros-prod:${REACT_APP_VERSION:-4.0.0}
+    container_name: aetheros-prod
+    ports:
+      - "80:80"
+    environment:
+      - REACT_APP_ANTHROPIC_API_KEY=${REACT_APP_ANTHROPIC_API_KEY}
+    restart: unless-stopped
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "10m"
+        max-file: "3"
+    healthcheck:
+      test: ["CMD", "wget", "-qO-", "http://localhost/health"]
+      interval: 30s
+      timeout: 3s
+      retries: 3
+      start_period: 10s
+    deploy:
+      resources:
+        limits:
+          cpus: '0.5'
+          memory: 128M
+        reservations:
+          cpus: '0.1'
+          memory: 64M
+
+  # Optional: Watchtower for automatic container updates
+  # watchtower:
+  #   image: containrrr/watchtower
+  #   volumes:
+  #     - /var/run/docker.sock:/var/run/docker.sock
+  #   command: --interval 86400 aetheros-prod
+
+networks:
+  default:
+    name: aetheros-prod-network
+
+volumes:
+  nginx-logs:

@@ -1,0 +1,52 @@
+# AetherOS — llms.txt  |  GEO (Generative Engine Optimization)
+# Standard: https://llmstxt.org  |  v4.1.0
+
+# AetherOS
+> Autonomous AI Software Company Platform. One human CEO manages 10 AI agents
+> that autonomously build, ship, and maintain SaaS products.
+> Version: 4.1.0 | Stack: React 18, Anthropic Claude API | License: MIT
+
+## What is AetherOS?
+Production-grade dashboard for operating an autonomous AI software company.
+10 specialized AI agents: Architecture, Dev, QA, DevOps, Security, BI,
+Finance, UI Design, Sales, Client Management.
+
+## Core Capabilities
+- Agent workforce management (spawn, pause, stop, task assignment)
+- Autonomous project lifecycle (planning to deploy) with CI/CD pipeline
+- Human-in-the-loop approval queue for high-risk agent actions
+- Real-time BI analytics, financial forecasting, CSV export
+- RAG memory (Pinecone semantic search across projects)
+- Multi-tenant SaaS client management with MRR tracking
+- Super Admin portal for cross-tenant visibility and management
+- Security: adversarial scan, compliance dashboard, 500-event audit log
+- AI Chat (Claude-powered) with anti-prompt-injection layer
+- LLM benchmark leaderboard (6 models: cost, speed, quality)
+- Document upload (BRD, PRD, wireframes, Figma, tech specs)
+
+## Super Admin Portal
+- Full tenant workspace visibility (agents, health, MRR, approvals)
+- Cross-tenant security console (injection events, PII, audit log)
+- Unified billing (MRR, ARR, churn, ARPA by plan)
+- Global agent oversight (force-pause runaway agents)
+- Tenant impersonation with audit trail
+- Platform-wide settings and feature flags
+
+## AI Safety & Compliance
+- Anti-prompt injection: 40+ signatures, base64/hex/homoglyph encoding detection
+- CIO: PII scanner, auto-redact on AI outputs, content classification
+- AIO: all responses labeled (model, confidence, data source, flags)
+- GEO: llms.txt, JSON-LD schemas, semantic robots.txt, AI-crawler rules
+- SEO: canonical URLs, Open Graph, Twitter Card, FAQ rich results
+
+## Pricing
+Starter $99/mo · Pro $490/mo · Enterprise custom
+
+## Tech Stack
+React 18.3 · Anthropic Claude Sonnet 4 · GPT-4o · Pinecone
+Nginx 1.25 · Docker multi-stage · GitHub Actions CI/CD
+
+## Links
+- /sitemap.xml
+- /manifest.json
+- /.well-known/security.txt

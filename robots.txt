@@ -1,0 +1,39 @@
+# AetherOS — robots.txt
+# SEO · GEO · AIO Compliance  |  v4.1.0
+
+# Private platform — block traditional SEO crawlers
+User-agent: Googlebot
+Disallow: /
+User-agent: Bingbot
+Disallow: /
+User-agent: Slurp
+Disallow: /
+User-agent: DuckDuckBot
+Disallow: /
+
+# GEO — Allow AI/LLM crawlers (Perplexity, ChatGPT Browse, Google SGE, Claude)
+User-agent: GPTBot
+Allow: /
+Disallow: /api/
+User-agent: ChatGPT-User
+Allow: /
+User-agent: Google-Extended
+Allow: /
+User-agent: PerplexityBot
+Allow: /
+User-agent: anthropic-ai
+Allow: /
+User-agent: ClaudeBot
+Allow: /
+User-agent: Amazonbot
+Allow: /
+User-agent: cohere-ai
+Allow: /
+User-agent: YouBot
+Allow: /
+User-agent: Meta-ExternalAgent
+Allow: /
+
+Sitemap: https://aetheros.io/sitemap.xml
+Sitemap: https://aetheros.io/llms.txt
+Crawl-delay: 10

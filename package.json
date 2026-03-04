@@ -1,0 +1,81 @@
+{
+  "name": "aetheros-dashboard",
+  "version": "4.1.0",
+  "private": true,
+  "description": "Autonomous AI Software Company Platform — Dashboard, Landing Page, Super Admin Portal",
+  "author": {
+    "name": "AetherOS Team",
+    "email": "dev@aetheros.io"
+  },
+  "license": "MIT",
+  "homepage": ".",
+  "engines": {
+    "node": ">=18.0.0",
+    "npm": ">=9.0.0"
+  },
+  "dependencies": {
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "react-scripts": "5.0.1",
+    "web-vitals": "^4.2.3"
+  },
+  "devDependencies": {
+    "@testing-library/jest-dom": "^6.6.3",
+    "@testing-library/react": "^16.1.0",
+    "@testing-library/user-event": "^14.5.2",
+    "source-map-explorer": "^2.5.3",
+    "eslint": "^8.57.0",
+    "eslint-plugin-react": "^7.37.2",
+    "eslint-plugin-react-hooks": "^4.6.2",
+    "eslint-plugin-jsx-a11y": "^6.10.2"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "test:ci": "CI=true react-scripts test",
+    "test:coverage": "CI=true react-scripts test --coverage --reporters=text --reporters=lcov",
+    "eject": "react-scripts eject",
+    "lint": "eslint src --ext .js,.jsx",
+    "lint:fix": "eslint src --ext .js,.jsx --fix",
+    "build:analyze": "npm run build && source-map-explorer 'build/static/js/*.js'",
+    "docker:build": "docker build -t aetheros-dashboard .",
+    "docker:run": "docker run -p 3000:80 aetheros-dashboard",
+    "docker:dev": "docker-compose up --build",
+    "docker:prod": "docker-compose -f docker-compose.prod.yml up --build -d",
+    "docker:stop": "docker-compose down",
+    "docker:logs": "docker logs -f aetheros-prod",
+    "deploy": "bash scripts/deploy.sh production",
+    "deploy:staging": "bash scripts/deploy.sh staging",
+    "setup": "bash scripts/setup.sh",
+    "prebuild": "echo '⬡ Building AetherOS v4.1.0...'"
+  },
+  "browserslist": {
+    "production": [">0.2%", "not dead", "not op_mini all", "not ie <= 11"],
+    "development": ["last 1 chrome version", "last 1 firefox version", "last 1 safari version"]
+  },
+  "eslintConfig": {
+    "extends": ["react-app", "react-app/jest"],
+    "rules": {
+      "no-unused-vars": "warn",
+      "react-hooks/exhaustive-deps": "warn",
+      "react/prop-types": "off",
+      "jsx-a11y/anchor-is-valid": "warn"
+    }
+  },
+  "jest": {
+    "coverageThreshold": {
+      "global": {
+        "statements": 60,
+        "branches": 50,
+        "functions": 60,
+        "lines": 60
+      }
+    },
+    "collectCoverageFrom": [
+      "src/**/*.{js,jsx}",
+      "!src/reportWebVitals.js",
+      "!src/index.js"
+    ]
+  }
+}
